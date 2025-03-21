@@ -21,6 +21,11 @@ def select_model(args, device):
         name = f"{model_id:02}_CodeFormer_baseline"
         model_path = os.path.join('model_zoo', 'team00_CodeFormer')
         model_func = CodeFormer
+    elif model_id == 1:     #change the model_id with Model ID
+        from models.team14_DSS import main as Dssmodel
+        name = f"{model_id:02}_Dssmodel_baseline"
+        model_path = os.path.join('/root/autodl-tmp/', 'team14_DSS')      #abs path
+        model_func = Dssmodel
     else:
         raise NotImplementedError(f"Model {model_id} is not implemented.")
 
